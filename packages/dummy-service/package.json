@@ -1,0 +1,11 @@
+{
+  "name": "@repo/dummy-service",
+  "version": "0.1.0",
+  "private": true,
+  "exports": {
+    "./*": "./src/*.ts"
+  },
+  "devDependencies": {
+    "@repo/types": "*"
+  }
+}
