@@ -3,9 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "exports": {
-    "./*": "./src/*.ts"
+    "./*": {
+      "types": "./src/*.ts",
+      "default": "./dist/*.js"
+    }
+  },
+  "scripts": {
+    "lint": "eslint",
+    "build": "tsc"
   },
   "devDependencies": {
-    "@repo/types": "*"
+    "@repo/types": "*",
+    "@repo/typescript-config": "*",
+    "typescript": "latest"
   }
 }

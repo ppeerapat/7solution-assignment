@@ -1,9 +1,5 @@
 import { IDepartment, IUser } from "@repo/types/Dummy.type";
-import { DUMMY_ROUTES, dummyClient } from "./dummy.instance";
-
-interface DummyUserResponse {
-  users: IUser[];
-}
+import { DUMMY_ROUTES, dummyClient, DummyUserResponse } from "./dummy.instance";
 
 export async function getDummyUsers() {
   const dummyResponse = await dummyClient.get<DummyUserResponse>(
