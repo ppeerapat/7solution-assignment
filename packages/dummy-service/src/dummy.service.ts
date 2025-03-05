@@ -9,6 +9,10 @@ export async function getDummyUsers() {
   return dummyResponse.data.users;
 }
 
+export function getUsernNameKey(user: IUser) {
+  return `${user.firstName}${user.lastName}`;
+}
+
 export function groupUsersByDepartment(users: IUser[]) {
   const departments = users.reduce(
     (acc, user) => {
@@ -53,7 +57,7 @@ export function groupUsersByDepartment(users: IUser[]) {
       }
 
       //User address accumulator
-      acc[userDepartment].addressUser[`${user.firstName}${user.lastName}`] =
+      acc[userDepartment].addressUser[getUsernNameKey(user)] =
         user.address.postalCode;
 
       return acc;
